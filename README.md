@@ -2,7 +2,7 @@
 
 A bunch of brief snippets mostly around software; everyday things I learn, things
 I know but often forget, and anything else I care to write down. All credits for the idea and the tooling
-around it go to [Lee Byron](leebyron.com).
+around it go to [Lee Byron](http://leebyron.com).
 
 ---
 
