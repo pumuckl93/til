@@ -21,19 +21,16 @@ export function Index({ frontmatters, Content }) {
         h('title', 'Today I Learned / Lee Byron'),
         ...OpenGraph({
           'og:url': canonicalRoot,
-          'og:title': 'Lee Byron / til',
+          'og:title': 'Philipp / til',
           'og:description': 'Today I Learned: A bunch of brief blurbs on miscellaneous matter.',
-          'twitter:card': 'summary',
-          'twitter:title': 'Lee Byron / til: A bunch of brief blurbs on miscellaneous matter.',
-          'twitter:creator': '@leeb',
         }),
         JSONLD({
           '@type': 'Collection',
           name: 'Today I Learned',
           author: {
             '@type': 'Person',
-            name: 'Lee Byron',
-            url: 'http://leebyron.com' },
+            name: 'Philipp',
+            url: 'https://pumuckl93.github.io/til/' },
           url: canonicalRoot,
           collectionSize: frontmatters.length,
           license: 'https://creativecommons.org/licenses/by/4.0/',
@@ -70,11 +67,11 @@ export function Feed({ entries }) {
       h('link', { rel: 'self', type: 'application/atom+xml', href: canonicalPath('/feed.xml') }),
       h('link', { rel: 'alternate', type: 'text/html', href: canonicalRoot }),
       h('updated', entries.map(e => e.lastModified).sort((a, b) => a - b).pop().toISO()),
-      h('title', 'Lee Byron / til'),
+      h('title', 'today-learn / til'),
       h('subtitle', 'Today I Learned: A bunch of brief blurbs on miscellaneous matter.'),
       h('icon', canonicalPath('/assets/favicon.png')),
-      h('author', h('name', 'Lee Byron'), h('uri', 'https://leebyron.com')),
-      h('rights', '© 2022 Lee Byron ⸱ licensed under CC BY 4.0'),
+      h('author', h('name', 'Philipp'), h('uri', 'https://pumuckl93.github.io/til/')),
+      h('rights', '© 2022 Philipp ⸱ licensed under CC BY 4.0 credtis to Lee Byron for code and layout'),
       h('generator', { uri: 'https://github.com/leebyron/til' }, 'til'),
       entries.map(({ markdown, frontmatter, lastModified }) =>
         h('entry',
@@ -83,12 +80,12 @@ export function Feed({ entries }) {
           h('published', frontmatter.date.toISO()),
           h('updated', lastModified.toISO()),
           h('title', frontmatter.title),
-          h('author', h('name', 'Lee Byron'), h('uri', 'https://leebyron.com')),
+          h('author', h('name', 'Philipp'), h('uri', 'https://pumuckl93.github.io/til/'')),
           frontmatter.tags.map(tag => h('category', { term: tag })),
           h('content', { type: 'html', innerHTML: `<![CDATA[${
             render(mdjsx(markdown, { components }))
           }]]>` }),
-          h('rights', `© ${frontmatter.date.year} Lee Byron ⸱ licensed under CC BY 4.0`)
+          h('rights', `© ${frontmatter.date.year} Philipp Diller ⸱ licensed under CC BY 4.0  credtis to Lee Byron for code and layout`)
         )
       )
     )
@@ -98,7 +95,7 @@ export function Feed({ entries }) {
 export function Page({ filename, lastModified, frontmatter, markdown, Content, prev, next }) {
   const path = `/${frontmatter.permalink}/`
   const canonicalUrl = canonicalPath(path)
-  const pageTitle = `til / ${frontmatter.title} — Lee Byron`
+  const pageTitle = `til / ${frontmatter.title} — Philipp`
   const description = textContent(findNode(markdown, 'paragraph'))
   const imageNode = findNode(markdown, 'image')
   const image = imageNode && resolve(canonicalUrl, imageNode.url)
@@ -118,12 +115,10 @@ export function Page({ filename, lastModified, frontmatter, markdown, Content, p
           'og:image': image,
           'og:image:alt': imageNode?.alt,
           'og:type': 'article',
-          'article:author:first_name': 'Lee',
-          'article:author:last_name': 'Byron',
+          'article:author:first_name': 'Philipp',
+          'article:author:last_name': '',
           'article:published_time': datePublished,
           'article:modified_time': dateModified,
-          'twitter:card': 'summary',
-          'twitter:creator': '@leeb',
         }),
         JSONLD({
           '@type': 'LearningResource',
@@ -179,8 +174,8 @@ function Document({ children }) {
       ),
       h('body',
         h('header',
-          h('a', { href: 'https://leebyron.com' },
-            h('img', { src: useRelPath('/assets/logo.svg'), alt: 'Lee Byron' })
+          h('a', { href: 'https://pumuckl93.github.io/til/' },
+            h('img', { src: useRelPath('/assets/logo.svg'), alt: 'Philipp' })
           )
         ),
         children.filter(child => !isHeadElement(child)),
@@ -252,13 +247,13 @@ function Attribution({ filename, frontmatter: { permalink, date } }) {
     ' ⸱ ',
 
     // edit
-    h('a', { href: `https://raw.githubusercontent.com/leebyron/til/main/entries/${encodeURIComponent(filename)}`, target: '_blank' },
+    h('a', { href: `https://raw.githubusercontent.com/pumuckl93/til/main/entries/${encodeURIComponent(filename)}`, target: '_blank' },
       'raw'),
 
     ' ⸱ ',
 
     // edit
-    h('a', { href: `https://github.com/leebyron/til/edit/main/entries/${encodeURIComponent(filename)}#L8`, target: '_blank' },
+    h('a', { href: `https://github.com/pumuckl93/til/edit/main/entries/${encodeURIComponent(filename)}#L8`, target: '_blank' },
       'edit'),
   ]
 }
