@@ -20,7 +20,7 @@ export function Index({ frontmatters, Content }) {
     { value: "/" },
     h(
       Document,
-      h("title", "Today I Learned / Lee Byron"),
+      h("title", "Today I Learned / Philipp"),
       ...OpenGraph({
         "og:url": canonicalRoot,
         "og:title": "Philipp / til",
@@ -183,8 +183,8 @@ export function Page({
         image,
         author: {
           "@type": "Person",
-          name: "Lee Byron",
-          url: "http://leebyron.com",
+          name: "Philipp",
+          url: "https://pumuckl93.github.io/til/",
         },
         url: canonicalUrl,
         datePublished,
