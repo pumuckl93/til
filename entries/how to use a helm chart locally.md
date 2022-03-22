@@ -2,7 +2,7 @@
 title: How to use a helm chart locally
 permalink: how-to-use-a-helm-chart-locally
 date: 2022-03-22T15:31:24+01:00
-tags: Kubernetes Helm
+tags: Kubernetes Helm DevOps
 ---
 
 # Running Helm
