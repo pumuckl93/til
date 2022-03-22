@@ -14,7 +14,7 @@ you can deploy it from a local directory.
 
 # Running Helm from a local directory
 
-- Clone the repo of your disred helm chart
+- Clone the repo of your desired helm chart
 - Check if there are any dependencies in the `Chart.yaml`
 - Add dependencies repos via `helm repo add`
 - Build `helm dep build ./charts/<package>` this will place the dependencies as
