@@ -8,7 +8,7 @@ const relativeUrl =
   // Adds back trailing / which resolve() removes.
   (from, to) => relative(from, to) + (to.endsWith("/") ? "/" : "");
 
-const canonicalRoot = "https://leebyron.com/til/";
+const canonicalRoot = "https://pumuckl93.github.io/til/";
 const canonicalPath = (to) => resolve(canonicalRoot, relativeUrl("/", to));
 const Path = createContext();
 const useCanonical = () => canonicalPath(useContext(Path));
@@ -104,7 +104,7 @@ export function Feed({ entries }) {
     ),
     h(
       "rights",
-      "© 2022 Philipp ⸱ licensed under CC BY 4.0 credtis to Lee Byron for code and layout"
+      "© 2022 Philipp ⸱ licensed under CC BY 4.0 credits to Lee Byron for code and layout"
     ),
     h("generator", { uri: "https://github.com/leebyron/til" }, "til"),
     entries.map(({ markdown, frontmatter, lastModified }) =>
@@ -131,7 +131,7 @@ export function Feed({ entries }) {
         }),
         h(
           "rights",
-          `© ${frontmatter.date.year} Philipp Diller ⸱ licensed under CC BY 4.0  credtis to Lee Byron for code and layout`
+          `© ${frontmatter.date.year} Philipp Diller ⸱ licensed under CC BY 4.0  credits to Lee Byron for code and layout`
         )
       )
     )
