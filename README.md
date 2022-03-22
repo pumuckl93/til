@@ -13,7 +13,7 @@ name and the fantastic [Learn in Public] essay by Shawn Wang.
 
 ---
 
-https://leebyron.com/til
+
 
 ---
 
