@@ -3,7 +3,7 @@
   <id>https://leebyron.com/til/feed.xml</id>
   <link rel="self" type="application/atom+xml" href="https://leebyron.com/til/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://leebyron.com/til/"/>
-  <updated>2022-02-12T07:24:31.000+00:00</updated>
+  <updated>2022-03-17T17:16:46.000+00:00</updated>
   <title>Lee Byron / til</title>
   <subtitle>
     Today I Learned: A bunch of brief blurbs on miscellaneous matter.
@@ -15,6 +15,21 @@
   </author>
   <rights>© 2022 Lee Byron ⸱ licensed under CC BY 4.0</rights>
   <generator uri="https://github.com/leebyron/til">til</generator>
+  <entry>
+    <id>https://leebyron.com/til/how-to-ride-a-bike/</id>
+    <link rel="alternate" type="text/html" href="https://leebyron.com/til/how-to-ride-a-bike/"/>
+    <published>2022-03-17T18:15:29.000+01:00</published>
+    <updated>2022-03-17T17:16:46.000+00:00</updated>
+    <title>how to ride a bike</title>
+    <author>
+      <name>Lee Byron</name>
+      <uri>https://leebyron.com</uri>
+    </author>
+    <content type="html"><![CDATA[<p>
+  Riding a bike is hard
+</p>]]></content>
+    <rights>© 2022 Lee Byron ⸱ licensed under CC BY 4.0</rights>
+  </entry>
   <entry>
     <id>https://leebyron.com/til/meetingbar/</id>
     <link rel="alternate" type="text/html" href="https://leebyron.com/til/meetingbar/"/>
