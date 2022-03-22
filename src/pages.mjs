@@ -397,7 +397,7 @@ function License({ year, children }) {
         property: "cc:attributionName",
         href: "https://leebyron.com",
       },
-      "Lee Byron"
+      "For layout and tooling Lee Byron"
     ),
 
     " ⸱ ",
