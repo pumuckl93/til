@@ -3,7 +3,7 @@
   <id>https://pumuckl93.github.io/til/feed.xml</id>
   <link rel="self" type="application/atom+xml" href="https://pumuckl93.github.io/til/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://pumuckl93.github.io/til/"/>
-  <updated>2022-03-22T15:36:41.000+00:00</updated>
+  <updated>2022-03-25T14:54:37.000+00:00</updated>
   <title>today-learn / til</title>
   <subtitle>
     Today I Learned: A bunch of brief blurbs on miscellaneous matter.
@@ -19,6 +19,41 @@
     © 2022 Philipp ⸱ licensed under CC BY 4.0 credits to Lee Byron for code and layout
   </rights>
   <generator uri="https://github.com/leebyron/til">til</generator>
+  <entry>
+    <id>
+      https://pumuckl93.github.io/til/how-to-customize-saving-a-model-from-django-admin/
+    </id>
+    <link rel="alternate" type="text/html" href="https://pumuckl93.github.io/til/how-to-customize-saving-a-model-from-django-admin/"/>
+    <published>2022-03-25T15:43:06.000+01:00</published>
+    <updated>2022-03-25T14:54:37.000+00:00</updated>
+    <title>How to customize saving a model from Django Admin</title>
+    <author>
+      <name>Philipp</name>
+      <uri>https://pumuckl93.github.io/til/</uri>
+    </author>
+    <content type="html"><![CDATA[<h1 id="django-admin">
+  <a href="#django-admin" data-anchor>Django Admin</a>
+</h1>
+<p>
+  Django is one of the most famous web frameworks in python. The Django Admin allows the end user to interact with the Model objects. Most of the time you don’t need to concern yourself, how the model is stored by Django Admin, but sometimes you want certain actions to happen when a model was updated. e.g. send a notification, refresh the cache etc. In this case you can customize the behavior of the Django Admin. Here is a simple example:
+</p>
+<pre data-code-block><code>@admin.register(Book)
+class BookAdmin(admin.ModelAdmin):
+	# fields
+	readonly_fields = ['field_1']
+
+
+	def save_model(self, request: Any, obj: Any, form: Any, change: Any) -&gt; None:
+		# your custome code
+		# form.changed_data has the keys of the changed values
+		# form.cleaned_data has the actual input values
+		# obj is the updated object
+		return super().save_model(request, obj, form, change)
+</code></pre>]]></content>
+    <rights>
+      © 2022 Philipp Diller ⸱ licensed under CC BY 4.0  credits to Lee Byron for code and layout
+    </rights>
+  </entry>
   <entry>
     <id>
       https://pumuckl93.github.io/til/how-to-use-a-helm-chart-locally/
